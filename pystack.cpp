@@ -10,7 +10,7 @@ static PyObject* getStackSize(PyObject *self, PyObject *args)
 
 	if (!PyFrame_Check(args))
 	{
-		PyErr_SetString(PyExc_TypeError, "Arguement to getStackSize must be a frame object.");
+		PyErr_SetString(PyExc_TypeError, "Argument to getStackSize must be a frame object.");
 		return NULL;
 	}
 	frame = (PyFrameObject*) args;
@@ -27,7 +27,7 @@ static PyObject* getStackItem(PyObject *self, PyObject *args)
 
     if (!PyArg_ParseTuple(args, "Oi", &frame, &itemindex))
 	{
-		PyErr_SetString(PyExc_TypeError, "Arguement to getStackItem must be frame object and an integer index.");
+		PyErr_SetString(PyExc_TypeError, "Argument to getStackItem must be frame object and an integer index.");
         return NULL;
 	}
 	stack_pointer = frame->f_stacktop;
